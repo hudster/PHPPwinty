@@ -14,7 +14,7 @@ Declare the following 3 variables:
 
 Add this line to your application:
 
-    require_once("/pwinty/PHPPwinty.php");
+    require_once("/PHPPwinty/PHPPwinty.php");
 
 Declare a new instance of PHPPwinty
 
