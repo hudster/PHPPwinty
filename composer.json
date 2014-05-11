@@ -1,0 +1,27 @@
+{
+    "name": "hudster/PHPPwinty",
+    "description": "PHP API wrapper for Pwinty.com",
+    "keywords": ["pwinty", "pwinty.com", "api"],
+    "authors": [
+        {
+            "name": "Brad Pineau",
+            "role": "Developer"
+        },
+        {
+            "name": "Dan Hudster",
+            "homepage": "https://github.com/hudster",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-0" : {
+            "hudster\\PHPPwinty" : "src/"
+        }
+    }
+}
+
+
+
+
+
+

@@ -12,6 +12,14 @@ Declare the following 3 variables:
 	define("PWINTY_MERCHANTID", "*******");		// available from pwinty.com
 	define("PWINTY_APIKEY", 	"*******"); 	// available from pwinty.com
 
+### With Composer
+
+Add the following to the require section of your composer.json file:
+
+    "hudster/PHPPwinty": "dev-master"
+
+### Without Composer
+
 Add this line to your application:
 
     require_once("/PHPPwinty/PHPPwinty.php");
