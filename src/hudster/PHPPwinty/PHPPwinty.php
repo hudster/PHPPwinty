@@ -11,18 +11,22 @@
  *
  * based on the original version for Pwinty API v1 by Brad Pineau
  *
+ * Usage:
  *
- *
- * Set the following using your own crendtials:
- *
- * define("PWINTY_API", 		"sandbox");		// set to "production" or "sandbox"		
- * define("PWINTY_MERCHANTID", 	"*******");		// available from pwinty.com
- * define("PWINTY_APIKEY", 		"*******"); 	// available from pwinty.com
+ * $options = array(
+ *     'api'        => 'sandbox',
+ *     'merchantId' => 'xxxxxxxxxxxxxxxxx',
+ *     'apiKey'     => 'xxxxxxxxxxxxxxxxx'
+ * );
+ * $pwinty = new PHPPwinty($options);
+ * $catalogue = $pwinty->getCatalogue('GB', 'Pro');
  *
  */
 
+namespace hudster\PHPPwinty;
 
 class PHPPwinty {
+	var $opt = array();
 	var $api_url = "";
 	var $last_error = "";
 
@@ -31,8 +35,9 @@ class PHPPwinty {
     *
     * @access private
     */
-	function PHPPwinty() {
-		if (PWINTY_API == "production") {
+	function __construct($options) {
+		$this->opt = $options;
+		if ($this->opt['api'] == "production") {
 			$this->api_url = "https://api.pwinty.com/v2";
 		} else {
 			$this->api_url = "https://sandbox.pwinty.com/v2";
@@ -58,8 +63,8 @@ class PHPPwinty {
 		}
 
 		$headers = array();
-		$headers[] = 'X-Pwinty-MerchantId: '.PWINTY_MERCHANTID;
-		$headers[] = 'X-Pwinty-REST-API-Key: '.PWINTY_APIKEY;
+		$headers[] = 'X-Pwinty-MerchantId: '.$this->opt['merchantId'];
+		$headers[] = 'X-Pwinty-REST-API-Key: '.$this->opt['apiKey'];
 		$headers[] = 'Content-Type:application/json';
 
 		$ch = curl_init();
