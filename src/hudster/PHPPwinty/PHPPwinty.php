@@ -60,7 +60,7 @@ class PHPPwinty {
 		$headers = array();
 		$headers[] = 'X-Pwinty-MerchantId: '.PWINTY_MERCHANTID;
 		$headers[] = 'X-Pwinty-REST-API-Key: '.PWINTY_APIKEY;
-		$headers[] = 'Content-Type:application/json';
+		$headers[] = 'Accept: application/json';
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
